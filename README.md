@@ -1,11 +1,11 @@
-# query-d1
+# query_d1
 
 Query D1 outside Cloudflare Workers using Cloudflare API call
 
 ## Usage
 
 ```ts
-import queryD1Database from "https://deno.land/x/query-d1";
+import queryD1Database from "https://deno.land/x/query_d1/mod.ts";
 
 const db = queryD1Database({
   accountId: Deno.env.get("CF_ACCOUNT_ID"),
