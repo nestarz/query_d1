@@ -46,5 +46,11 @@ export default ({
       }
     )
       .then((r) => r.json())
-      .then((r) => (r.errors?.length > 0 ? r : r?.result)),
+      .then((r) =>
+        proxyUrl
+          ? r
+          : r.errors?.length > 0
+          ? { error: r.errors[0] }
+          : r?.result?.[0]?.results ?? r
+      ),
 });
